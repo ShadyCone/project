@@ -1,93 +1,50 @@
-import javax.swing.*;
-import java.awt.*;
-import java.awt.event.*;
- 
-public class LoginForm extends JFrame {
- 
-    Container container=getContentPane();
-    JLabel userLabel=new JLabel("USERNAME");
-    JLabel passwordLabel=new JLabel("PASSWORD");
-    JTextField userTextField=new JTextField();
-    JPasswordField passwordField=new JPasswordField();
-    JButton loginButton=new JButton("LOGIN");
-    JButton resetButton=new JButton("RESET");
-    JCheckBox showPassword=new JCheckBox("Show Password");
- 
-    LoginForm()
-    {
-        setLayoutManager();
-        setLocationAndSize();
-        addComponentsToContainer();
-        addActionEvent();
-    }
- 
-    public void setLayoutManager()
-    {
-        container.setLayout(null);
-    }
- 
-    public void setLocationAndSize()
-    {
-        userLabel.setBounds(50,150,100,30);
-        passwordLabel.setBounds(50,220,100,30);
-        userTextField.setBounds(150,150,150,30);
-        passwordField.setBounds(150,220,150,30);
-        showPassword.setBounds(150,250,150,30);
-        loginButton.setBounds(50,300,100,30);
-        resetButton.setBounds(200,300,100,30);
- 
-    }
- 
-    public void addComponentsToContainer()
-    {
-        container.add(userLabel);
-        container.add(passwordLabel);
-        container.add(userTextField);
-        container.add(passwordField);
-        container.add(showPassword);
-        container.add(loginButton);
-        container.add(resetButton);
-    }
- 
-    public void addActionEvent()
-    {
-        loginButton.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
- 
-            	String userText = userTextField.getText();
-                String pwdText = passwordField.getText();
-                
-               
-            }
-        });
- 
-        resetButton.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                userTextField.setText("");
-                passwordField.setText("");
-            }
-        });
- 
-        showPassword.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                if (showPassword.isSelected()) {
-                    passwordField.setEchoChar((char) 0);
-                } else {
-                    passwordField.setEchoChar('*');
-                }
- 
-            }
-        });
-    }
- 
-    public static void main(String[] a)
-    {
-        LoginForm frame=new LoginForm();
-        frame.setTitle("Login Form");
-        frame.setVisible(true);
-        frame.setBounds(10,10,370,600);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setResizable(false);
- 
-    }
-}
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="703.0" prefWidth="738.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1">
+   <bottom>
+      <AnchorPane prefHeight="708.0" prefWidth="738.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="322.0" layoutY="68.0" prefHeight="50.0" prefWidth="192.0" text="Sign in" textAlignment="CENTER">
+               <font>
+                  <Font size="27.0" />
+               </font>
+            </Label>
+            <Label layoutX="120.0" layoutY="194.0" prefHeight="50.0" prefWidth="192.0" text="Username " textAlignment="CENTER">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </Label>
+            <Label layoutX="120.0" layoutY="289.0" prefHeight="50.0" prefWidth="192.0" text="Password" textAlignment="CENTER">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </Label>
+            <PasswordField layoutX="272.0" layoutY="294.0" prefHeight="37.0" prefWidth="259.0" />
+            <PasswordField layoutX="272.0" layoutY="200.0" prefHeight="44.0" prefWidth="262.0" />
+            <Button layoutX="349.0" layoutY="385.0" mnemonicParsing="false" text="Sign in">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Button>
+            <Label layoutX="234.0" layoutY="484.0" prefHeight="50.0" prefWidth="192.0" text="Don't have an account? " textAlignment="CENTER">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Button layoutX="418.0" layoutY="493.0" mnemonicParsing="false" text="Sign up">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Button>
+            <Button layoutX="316.0" layoutY="428.0" mnemonicParsing="false" text="Forgot Password">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Button>
+         </children></AnchorPane>
+   </bottom>
+</BorderPane>
